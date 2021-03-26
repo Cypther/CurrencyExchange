@@ -1,0 +1,33 @@
+<form [formGroup]="currencyExchangeForm" #formDirective="ngForm" (ngSubmit)="onSubmit(currencyExchangeForm.value, formDirective)">
+    <table class="example-full-width" cellspacing="0">
+        <tr>
+        <td>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Invoice Date</mat-label>
+            <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" formControlName="InvoiceDate" placeholder="required">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+      </td>
+      <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>Euro Amount €</mat-label>
+            <input matInput formControlName="EuroAmount" placeholder="required">
+          </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="example-full-width">
+          <mat-label>Payment Currency</mat-label>
+          <mat-select formControlName="PaymentCurrencyType" placeholder="required">
+            <mat-option *ngFor="let paymentCurrencyType of paymentCurrencyTypes" [value]="paymentCurrencyType">{{paymentCurrencyType}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-card-actions>
+          <button mat-raised-button color="primary" type="submit" [disabled]="!currencyExchangeForm.valid">Convert</button>
+      </mat-card-actions>
+    </td>
+      </tr>
+    </table>
+</form>

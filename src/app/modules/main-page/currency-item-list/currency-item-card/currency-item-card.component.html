@@ -1,0 +1,10 @@
+<mat-card>
+    <mat-card-subtitle>Invoice Date: {{currencyExchangeCalculatedItem.InvoiceDate}}</mat-card-subtitle>
+    <div>Pre-Tax Amount: {{currencyExchangeCalculatedItem.PreTaxAmount}}</div> 
+    <div>Tax Amount: {{currencyExchangeCalculatedItem.TaxAmount}}</div> 
+    <div>Grand Total:{{currencyExchangeCalculatedItem.GrandTotal}}</div> 
+    <div>Exchange Rate: {{currencyExchangeCalculatedItem.ExchangeRate}}</div>
+    <mat-card-actions>
+        <button mat-raised-button color="warn" type="button" (click)="removeCard()">Remove</button>
+      </mat-card-actions>
+</mat-card>

@@ -1,0 +1,6 @@
+<div>
+    <h3>Exchange Converter History</h3>
+    <div *ngFor="let currencyExchangeCalculatedItem of currencyExchangeCalculatedItemList">
+        <app-currency-item-card [currencyExchangeCalculatedItem]="currencyExchangeCalculatedItem" (removeButtonClick)="onDeleteButtonClicked(currencyExchangeCalculatedItem)"></app-currency-item-card>
+    </div>
+</div>
